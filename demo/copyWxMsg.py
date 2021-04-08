@@ -1,15 +1,25 @@
-import pyautogui,cv2,pyperclip,time,json
+import pyautogui,pyperclip,time,json
+import platform
 
 pyautogui.FAILSAFE = True
 pyautogui.PAUSE = 0.3
 
+if platform.platform().index('Windows')!=-1:
+  commandOrctrl = 'ctrl'
+else:
+  commandOrctrl = 'command'
+
+
 def paste():
-  pyautogui.hotkey('command','v')
+  pyautogui.hotkey(commandOrctrl,'v')
+
+def copy():
+  pyautogui.hotkey(commandOrctrl,'c')
 
 def chooseUser(name):
   # while()
-  pyautogui.click(1172,1055)
-  pyautogui.click(100,54,duration=0.3) 
+  pyautogui.click(339,1061)
+  pyautogui.click(102,37,duration=0.3) 
   pyperclip.copy(name)
   paste()
   pyautogui.hotkey('enter')
@@ -17,9 +27,9 @@ def chooseUser(name):
 def copyLastMsg():
   # pyautogui.moveTo(x=408,y=487,duration=0.3)
   # time.sleep(2)
-  pyautogui.click()
-  pyautogui.click()
-  pyautogui.mouseDown()
+  pyautogui.click(410,480,clicks=2)
+  copy()
+  pyautogui.click(350,570)
 
-# chooseUser('此用户已成仙')
+chooseUser('古惑仔')
 copyLastMsg()
