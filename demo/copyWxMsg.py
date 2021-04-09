@@ -19,7 +19,7 @@ def copy():
 
 def enter():
   pyautogui.press('enter')
-
+  
 def chooseUser(name):
   # while()
   pyautogui.click(339,1061)
