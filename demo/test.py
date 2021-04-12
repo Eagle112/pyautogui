@@ -1,4 +1,10 @@
 import pyautogui
+from cycleLinkList import *
 
-pyautogui.FAILSAFE = True
-pyautogui.moveTo(1844,1022,duration = 20)
+ll = SinCycLinkedlist()
+ll.add('古惑仔')
+ll.add('李伟昂')
+cur = ll._head
+while(True):
+    print(cur.item)
+    cur = cur.next
